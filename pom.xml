@@ -1,0 +1,275 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>Emit</groupId>
+    <artifactId>PowerConsult</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>PowerConsult</name>
+
+    <build>
+        <finalName>PowerConsult</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongo-java-driver</artifactId>
+    <version>1.3</version>
+</dependency>
+        
+            <dependency>
+                <groupId>org.glassfish.jersey</groupId>
+                <artifactId>jersey-bom</artifactId>
+                <version>${jersey.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+            	<groupId>org.json</groupId>
+            	<artifactId>json</artifactId>
+            	<version>20090211</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.hibernate</groupId>
+            	<artifactId>hibernate-core</artifactId>
+            	<version>5.2.10.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.hibernate</groupId>
+            	<artifactId>hibernate-validator</artifactId>
+            	<version>5.2.1.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.hibernate</groupId>
+            	<artifactId>hibernate-entitymanager</artifactId>
+            	<version>5.2.10.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.hibernate.javax.persistence</groupId>
+            	<artifactId>hibernate-jpa-2.1-api</artifactId>
+            	<version>1.0.0.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.slf4j</groupId>
+            	<artifactId>slf4j-api</artifactId>
+            	<version>1.7.7</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.slf4j</groupId>
+            	<artifactId>slf4j-log4j12</artifactId>
+            	<version>1.7.7</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.jboss.logging</groupId>
+            	<artifactId>jboss-logging</artifactId>
+            	<version>3.3.0.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.jboss.spec.javax.transaction</groupId>
+            	<artifactId>jboss-transaction-api_1.2_spec</artifactId>
+            	<version>1.0.1.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>javassist</groupId>
+            	<artifactId>javassist</artifactId>
+            	<version>3.12.1.GA</version>
+            </dependency>
+            <dependency>
+            	<groupId>antlr</groupId>
+            	<artifactId>antlr</artifactId>
+            	<version>2.7.7</version>
+            </dependency>
+            <dependency>
+            	<groupId>com.fasterxml</groupId>
+            	<artifactId>classmate</artifactId>
+            	<version>1.3.0</version>
+            </dependency>
+            <dependency>
+            	<groupId>dom4j</groupId>
+            	<artifactId>dom4j</artifactId>
+            	<version>1.6.1</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.hibernate.common</groupId>
+            	<artifactId>hibernate-commons-annotations</artifactId>
+            	<version>5.0.1.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.jboss</groupId>
+            	<artifactId>jandex</artifactId>
+            	<version>2.0.3.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>mysql</groupId>
+            	<artifactId>mysql-connector-java</artifactId>
+            	<version>5.1.42</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.hibernate</groupId>
+            	<artifactId>hibernate-c3p0</artifactId>
+            	<version>5.1.0.Final</version>
+            </dependency>
+            <dependency>
+            	<groupId>javax.el</groupId>
+            	<artifactId>javax.el-api</artifactId>
+            	<version>2.2.4</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.glassfish.web</groupId>
+            	<artifactId>javax.el</artifactId>
+            	<version>2.2.4</version>
+            </dependency>
+            <dependency>
+            	<groupId>org.glassfish.jersey.media</groupId>
+            	<artifactId>jersey-media-json-jackson</artifactId>
+            	<version>2.25</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+    <dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>2.10.1</version>
+	</dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet-core</artifactId>
+            <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
+            <!-- artifactId>jersey-container-servlet</artifactId -->
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+</dependency>
+        
+        
+      <dependency>
+  <groupId>org.glassfish.jersey.media</groupId>
+  <artifactId>jersey-media-json-jackson</artifactId>
+</dependency>
+      
+      
+      
+      <!-- Hibernate dependencies-->
+
+		
+  <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+<dependency>
+    <groupId>org.hibernate.javax.persistence</groupId>
+    <artifactId>hibernate-jpa-2.1-api</artifactId>
+</dependency>
+
+<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-api</artifactId>
+  	</dependency>
+<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-log4j12</artifactId>
+  	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
+<dependency>
+    <groupId>org.jboss.logging</groupId>
+    <artifactId>jboss-logging</artifactId>
+</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.jboss.spec.javax.transaction/jboss-transaction-api_1.2_spec -->
+<dependency>
+    <groupId>org.jboss.spec.javax.transaction</groupId>
+    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+</dependency>
+  	
+  	<dependency>
+    <groupId>javassist</groupId>
+    <artifactId>javassist</artifactId>
+</dependency> 
+  	<!-- https://mvnrepository.com/artifact/antlr/antlr -->
+<dependency>
+    <groupId>antlr</groupId>
+    <artifactId>antlr</artifactId>
+</dependency>
+  	<!-- https://mvnrepository.com/artifact/com.fasterxml/classmate -->
+<dependency>
+    <groupId>com.fasterxml</groupId>
+    <artifactId>classmate</artifactId>
+</dependency>
+  	<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+<dependency>
+    <groupId>dom4j</groupId>
+    <artifactId>dom4j</artifactId>
+</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
+<dependency>
+    <groupId>org.hibernate.common</groupId>
+    <artifactId>hibernate-commons-annotations</artifactId>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.jboss/jandex -->
+<dependency>
+    <groupId>org.jboss</groupId>
+    <artifactId>jandex</artifactId>
+</dependency>
+  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-c3p0</artifactId>
+</dependency>
+
+<dependency>
+   <groupId>javax.el</groupId>
+   <artifactId>javax.el-api</artifactId>
+</dependency>
+<dependency>
+   <groupId>org.glassfish.web</groupId>
+   <artifactId>javax.el</artifactId>
+</dependency>
+
+<!-- fin dependance hibernate -->
+    </dependencies>
+    <properties>
+        <jersey.version>2.26</jersey.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>
